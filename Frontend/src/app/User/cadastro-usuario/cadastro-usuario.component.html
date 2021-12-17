@@ -1,0 +1,45 @@
+<div class="body">
+    <div class="container"> 
+        
+        <div class="card center">
+            
+            <h4 style="margin-top: 10px">Cadastrar</h4>
+            
+            <form class="mb-2">
+              
+                <div>
+                    <h6>Nome</h6>
+                    <div class="col-md-6 mb-3">
+                        <input [(ngModel)]="user.nome" [ngModelOptions]="{standalone: true}" type="text" class="form-control-sm"  id="inputNome" placeholder="Digite seu nome">
+                    </div>
+                </div>
+
+                <div>
+                    <h6>Usuario</h6>
+                    <div class="col-md-6 mb-3">
+                        <input [(ngModel)]="user.usuario" [ngModelOptions]="{standalone: true}" type="text" class="form-control-sm"  id="inputUsuario" placeholder="Digite seu usuario">
+                    </div>
+                </div>
+
+                <div>
+                    <h6>Senha</h6>
+                    <div class="col-md-6 center mb-3">
+                        <input [(ngModel)]="user.senha" [ngModelOptions]="{standalone: true}" type="password" class="form-control-sm"  id="inputSenha" placeholder="Digite sua senha">
+                    </div>
+                </div>
+
+                <div>
+                    <h6>Salário</h6>
+                    <div class="col-md-6 center mb-3">
+                        <input [(ngModel)]="user.salario" [ngModelOptions]="{standalone: true}" type="text" class="form-control-sm"  id="inputSalario" placeholder="Digite seu salario">
+                    </div>
+                </div>
+
+                <div>
+                    <button type="submit" value="submit" (click)="cadastrar()" class="btn btn-warning btn-sm mb-2">Cadastrar</button>
+                </div> 
+            
+            </form>
+        </div>
+    </div>
+</div>
