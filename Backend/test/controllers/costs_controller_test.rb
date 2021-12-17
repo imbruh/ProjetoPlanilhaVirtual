@@ -17,7 +17,7 @@ class CostsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create cost" do
     assert_difference('Cost.count') do
-      post costs_url, params: { cost: { descricao: @cost.descricao, user_id: @cost.user_id, valor: @cost.valor } }
+      post costs_url, params: { cost: { data: @cost.data, descricao: @cost.descricao, user_id: @cost.user_id, valor: @cost.valor } }
     end
 
     assert_redirected_to cost_url(Cost.last)
@@ -34,7 +34,7 @@ class CostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update cost" do
-    patch cost_url(@cost), params: { cost: { descricao: @cost.descricao, user_id: @cost.user_id, valor: @cost.valor } }
+    patch cost_url(@cost), params: { cost: { data: @cost.data, descricao: @cost.descricao, user_id: @cost.user_id, valor: @cost.valor } }
     assert_redirected_to cost_url(@cost)
   end
 

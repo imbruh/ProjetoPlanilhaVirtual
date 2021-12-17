@@ -3,9 +3,11 @@
 one:
   descricao: MyString
   valor: 1.5
+  data: 2021-12-16
   user: one
 
 two:
   descricao: MyString
   valor: 1.5
+  data: 2021-12-16
   user: two

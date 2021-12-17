@@ -64,6 +64,6 @@ class CostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def cost_params
-      params.require(:cost).permit(:descricao, :valor, :user_id)
+      params.require(:cost).permit(:descricao, :valor, :data, :user_id)
     end
 end

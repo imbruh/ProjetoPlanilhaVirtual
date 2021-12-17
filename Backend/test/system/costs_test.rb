@@ -14,6 +14,7 @@ class CostsTest < ApplicationSystemTestCase
     visit costs_url
     click_on "New Cost"
 
+    fill_in "Data", with: @cost.data
     fill_in "Descricao", with: @cost.descricao
     fill_in "User", with: @cost.user_id
     fill_in "Valor", with: @cost.valor
@@ -27,6 +28,7 @@ class CostsTest < ApplicationSystemTestCase
     visit costs_url
     click_on "Edit", match: :first
 
+    fill_in "Data", with: @cost.data
     fill_in "Descricao", with: @cost.descricao
     fill_in "User", with: @cost.user_id
     fill_in "Valor", with: @cost.valor
