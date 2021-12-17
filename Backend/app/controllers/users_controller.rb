@@ -57,6 +57,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def login 
+    # render User.login(params[:usuario])
+
+    render User.where(usuario: params["usuario "]).and(User.where(senha: params["senha"]))
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
