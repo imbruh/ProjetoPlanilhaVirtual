@@ -1,0 +1,49 @@
+<div class="body">
+    <app-menu></app-menu>
+
+    <div class="linha">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Descrição</span>
+            <input type="text" [(ngModel)]="cost.descricao" [ngModelOptions]="{standalone: true}" class="form-control" aria-describedby="basic-addon1">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Custo R$</span>
+            <input type="number" [(ngModel)]="cost.valor" [ngModelOptions]="{standalone: true}" class="form-control" aria-describedby="basic-addon1">
+        </div>
+
+        <button style="height: 10%; margin-left: 2%; margin-top: 1%;" type="button" (click)="inserir()" class="btn btn-success">Adicionar</button>
+
+        <div class="card">
+            <div class="card-body">
+               <h6 class="card-subtitle">Salário: R$ {{user.salario}}</h6>
+               <br>
+               <h6 class="card-subtitle">Valor Restante: R$ {{valorRestante}}</h6> 
+            </div>
+        </div>
+    </div>
+
+    <div class="tabela">
+        <table class="table table-secondary table-striped table-hover">
+            <thead>
+            <tr>
+                <th scope="col">Descrição</th>
+                <th scope="col">Custo</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let cost of costs">
+                <td>{{cost.descricao}}</td>
+                <td>{{cost.valor}}</td>
+                <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt" style="margin-left: 5%;"></i></td>
+            </tr>  
+            <tr>
+                <th>Valor Total: </th>
+                <td>R$ 00,00</td>
+                <td></td>
+            </tr>  
+            </tbody>
+        </table>
+    </div>
+</div>

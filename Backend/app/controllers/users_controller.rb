@@ -59,8 +59,18 @@ class UsersController < ApplicationController
 
   def login 
     # render User.login(params[:usuario])
+    @user = User.where(usuario: params["usuario"]).and(User.where(senha: params["senha"]))
 
-    render User.where(usuario: params["usuario "]).and(User.where(senha: params["senha"]))
+    @userNull = User.new()
+    @userNull.id = 0
+
+    if @user.empty?
+      # format.json { render json: @user.errors, status: :unprocessable_entity location: @user}
+      render @userNull
+    else
+      render @user
+    end
+    
   end
 
   private

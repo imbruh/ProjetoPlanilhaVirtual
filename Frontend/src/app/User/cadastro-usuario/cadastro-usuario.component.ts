@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/shared/model/user';
 import { UserService } from 'src/app/shared/service/user.service';
 
@@ -11,15 +12,31 @@ export class CadastroUsuarioComponent implements OnInit {
 
     user = new User();
 
-    constructor(private userService: UserService) { }
+    constructor(private userService: UserService, private rotaAtual: ActivatedRoute) { }
 
     ngOnInit() {
+        if (this.rotaAtual.snapshot.paramMap.has('id')) {
+            const idParaEdicao = Number(this.rotaAtual.snapshot.paramMap.get('id'));
+
+            this.userService.pesquisarPorId(idParaEdicao).subscribe(
+                user => {this.user = user} 
+            )
+        }
     }
 
     cadastrar(){
         this.userService.cadastrar(this.user).subscribe(
-            x=>{
-                console.log(x)
+            user=>{
+                console.log(user)
+            }
+        )
+    }
+
+    editar() {
+        this.userService.editar(this.user).subscribe(
+            user => {
+                this.user = user;
+                //mensagem usuario atualizado com sucesso
             }
         )
     }

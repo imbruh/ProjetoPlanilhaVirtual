@@ -10,19 +10,19 @@
                 <div>
                     <h6>Usuario</h6>
                     <div class="col-md-6 mb-3">
-                        <input type="text" class="form-control-sm"  id="inputUsuario" placeholder="Digite seu usuario">
+                        <input type="text" [(ngModel)]="loginDTO.usuario" [ngModelOptions]="{standalone: true}" class="form-control-sm"  id="inputUsuario" placeholder="Digite seu usuario">
                     </div>
                 </div>
 
                 <div>
                     <h6>Senha</h6>
                     <div class="col-md-6 center mb-3">
-                        <input type="password" class="form-control-sm"  id="inputSenha" placeholder="Digite sua senha">
+                        <input type="password" [(ngModel)]="loginDTO.senha" [ngModelOptions]="{standalone: true}" class="form-control-sm"  id="inputSenha" placeholder="Digite sua senha">
                     </div>
                 </div>
 
                 <div>
-                    <button type="submit" value="submit" class="btn btn-warning btn-sm mb-2">Entrar</button>
+                    <button type="submit" value="submit" class="btn btn-warning btn-sm mb-2" (click)="login()">Entrar</button>
                 </div> 
             
             </form>

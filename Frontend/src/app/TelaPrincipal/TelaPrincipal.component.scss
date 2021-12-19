@@ -1,0 +1,50 @@
+.body {
+    height:100vh;
+    background-color: #7EA780;
+}
+
+.linha {
+    display: flex;
+    align-items: center;
+}
+
+.input-group {
+    width: 18%;
+    margin-left: 3%;
+    margin-top: 2%;
+    height: 10%;
+}
+
+h6 {
+    font-weight: bold;
+}
+
+.card {
+    margin-left: 18%;
+    margin-top: 2%;
+}
+
+th, td {
+    width: 10%;
+}
+
+th {
+    font-weight: bold;
+}
+
+i {
+    font-size: 110%;
+    cursor: pointer;
+}
+
+.tabela {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+
+}
+
+.table {
+    text-align: center;
+    width: 60%;
+}

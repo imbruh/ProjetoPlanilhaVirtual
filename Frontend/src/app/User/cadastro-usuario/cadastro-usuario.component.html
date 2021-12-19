@@ -1,10 +1,13 @@
+
+
 <div class="body">
+    <app-menu style="width: 100vw;" *ngIf="user.id != undefined"></app-menu>
     <div class="container"> 
-        
         <div class="card center">
             
-            <h4 style="margin-top: 10px">Cadastrar</h4>
-            
+            <h4 *ngIf="user.id == undefined" style="margin-top: 10px">Cadastrar</h4>
+            <h4 *ngIf="user.id != undefined" style="margin-top: 10px">Editar</h4>
+                  
             <form class="mb-2">
               
                 <div>
@@ -36,7 +39,8 @@
                 </div>
 
                 <div>
-                    <button type="submit" value="submit" (click)="cadastrar()" class="btn btn-warning btn-sm mb-2">Cadastrar</button>
+                    <button type="submit" *ngIf="user.id == undefined" value="submit" (click)="cadastrar()" class="btn btn-warning btn-sm mb-2">Cadastrar</button>
+                    <button type="submit" *ngIf="user.id != undefined" value="submit" (click)="editar()" class="btn btn-warning btn-sm mb-2">Editar</button>
                 </div> 
             
             </form>

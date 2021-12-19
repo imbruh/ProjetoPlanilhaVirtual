@@ -1,5 +1,6 @@
 class CostsController < ApplicationController
   before_action :set_cost, only: %i[ show edit update destroy ]
+  skip_forgery_protection
 
   # GET /costs or /costs.json
   def index

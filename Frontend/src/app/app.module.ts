@@ -4,6 +4,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserModule } from './User/User.module';
+import { TelaPrincipalModule } from './TelaPrincipal/TelaPrincipal.module';
+import { RouterModule } from '@angular/router';
+import { LayoutModule } from './shared/layout/layout.module';
 
 @NgModule({
   declarations: [
@@ -13,8 +16,10 @@ import { UserModule } from './User/User.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    UserModule
-
+    UserModule,
+    TelaPrincipalModule,
+    RouterModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

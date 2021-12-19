@@ -1,0 +1,19 @@
+<div class="body">
+  <nav  class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+       <a class="navbar-brand" [routerLink]="['/index']">  
+            Planilha Virtual
+       </a>
+      <div class="collapse navbar-collapse" id="navbarText" style="color: white; display: flex; align-items: center;">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"></li>
+        </ul>
+        <p style="margin-top: 1%; cursor: pointer;" (click)="editarPerfil()">  
+          Editar Perfil
+        </p>
+        <span class="navbar-text me-4"></span>          
+          <button type="button" (click)="sair()" class="btn btn-warning">Sair<i class="fas fa-sign-out-alt ms-2"></i></button>
+      </div>
+    </div>
+  </nav>
+</div>

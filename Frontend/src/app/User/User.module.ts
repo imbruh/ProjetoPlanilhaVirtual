@@ -3,16 +3,17 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
 import { LoginUsuarioComponent } from './login-usuario/login-usuario.component';
+import { LayoutModule } from '../shared/layout/layout.module';
 
 @NgModule({
     declarations: [
         CadastroUsuarioComponent,
-        LoginUsuarioComponent,
-        
+        LoginUsuarioComponent,    
     ],
     imports: [
         CommonModule,
-        FormsModule
+        FormsModule,
+        LayoutModule
     ],
 })
 export class UserModule { }
