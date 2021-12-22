@@ -65,7 +65,6 @@ class UsersController < ApplicationController
     @userNull.id = 0
 
     if @user.empty?
-      # format.json { render json: @user.errors, status: :unprocessable_entity location: @user}
       render @userNull
     else
       render @user

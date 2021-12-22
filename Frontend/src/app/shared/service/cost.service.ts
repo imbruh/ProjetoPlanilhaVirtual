@@ -16,4 +16,16 @@ constructor(private httpClient: HttpClient) { }
     return this.httpClient.post<any>(`${this.URL_COST}.json`, cost)
   }
 
+  apagar(cost_id: number): Observable<any> {
+    return this.httpClient.delete<any>(`${this.URL_COST}/${cost_id}.json`)
+  }
+
+  editar(cost: Cost): Observable<any> {
+    return this.httpClient.put<any>(`${this.URL_COST}/${cost.id}.json`, cost)
+  }
+
+  listarCustos(user_id: number): Observable<any[]> {
+    return this.httpClient.get<any[]>(`http://localhost:3000/list-costs.json?user_id=${user_id}`)
+  }
+
 }

@@ -35,12 +35,15 @@
             <tbody>
             <tr *ngFor="let cost of costs">
                 <td>{{cost.descricao}}</td>
-                <td>{{cost.valor}}</td>
-                <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt" style="margin-left: 5%;"></i></td>
+                <td>R$ {{cost.valor}}</td>
+                <!-- <td>
+                    <input type="text">
+                </td> -->
+                <td><i class="fas fa-edit"></i> <i (click)="apagar(cost.id)" class="fas fa-trash-alt" style="margin-left: 5%;"></i></td>
             </tr>  
             <tr>
                 <th>Valor Total: </th>
-                <td>R$ 00,00</td>
+                <td style="font-weight: bold;">R$ {{valorTotal}}</td>
                 <td></td>
             </tr>  
             </tbody>

@@ -57,6 +57,29 @@ class CostsController < ApplicationController
     end
   end
 
+  def listCosts
+    @costs = Cost.where(user_id: params["user_id"])
+
+    respond_to do |format|
+      format.json { render json: @costs, status: :ok }
+    end
+    # @returnCosts = Array.new
+
+    # for i in @costs
+    #   @cost = Cost.new()
+
+    #   @cost.id = i.id
+    #   @cost.descricao = i.descricao
+    #   @cost.valor = i.valor
+    #   @cost.data = i.data
+    #   @cost.user_id = i.user_id
+
+    #   @returnCosts.push(@cost)
+    # end
+    # puts @returnCosts[0]
+    # render @costs
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cost
