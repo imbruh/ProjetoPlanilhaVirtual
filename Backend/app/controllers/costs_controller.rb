@@ -59,25 +59,19 @@ class CostsController < ApplicationController
 
   def listCosts
     @costs = Cost.where(user_id: params["user_id"])
+ 
+    @returnCosts = Array.new
 
-    respond_to do |format|
-      format.json { render json: @costs, status: :ok }
+    for i in @costs    
+      if i.data.month == params["mes"].to_i and i.data.year == params["ano"].to_i
+        @returnCosts.push(i)
+      end   
     end
-    # @returnCosts = Array.new
+   
+    respond_to do |format|
+      format.json { render json: @returnCosts, status: :ok }
+    end
 
-    # for i in @costs
-    #   @cost = Cost.new()
-
-    #   @cost.id = i.id
-    #   @cost.descricao = i.descricao
-    #   @cost.valor = i.valor
-    #   @cost.data = i.data
-    #   @cost.user_id = i.user_id
-
-    #   @returnCosts.push(@cost)
-    # end
-    # puts @returnCosts[0]
-    # render @costs
   end
 
   private

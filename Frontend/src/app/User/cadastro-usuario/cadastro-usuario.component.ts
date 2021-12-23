@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/shared/model/user';
 import { UserService } from 'src/app/shared/service/user.service';
 
@@ -12,7 +12,7 @@ export class CadastroUsuarioComponent implements OnInit {
 
     user = new User();
 
-    constructor(private userService: UserService, private rotaAtual: ActivatedRoute) { }
+    constructor(private userService: UserService, private rotaAtual: ActivatedRoute, private roteador: Router) { }
 
     ngOnInit() {
         if (this.rotaAtual.snapshot.paramMap.has('id')) {
@@ -36,6 +36,7 @@ export class CadastroUsuarioComponent implements OnInit {
         this.userService.editar(this.user).subscribe(
             user => {
                 this.user = user;
+                this.roteador.navigate(['index']);
                 //mensagem usuario atualizado com sucesso
             }
         )

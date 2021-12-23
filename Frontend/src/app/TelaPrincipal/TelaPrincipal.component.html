@@ -23,6 +23,16 @@
         </div>
     </div>
 
+    <div class="calendario">
+        <div class="calendario-label">
+            <i style="font-size: 180%; margin-top: 0.5%;" class="fas fa-calendar-alt"></i>
+            <select class="form-select mb-3" [(ngModel)]="mesEscolhido" (ngModelChange)="buscarPorMes()" aria-label="Default select example">
+                <option value="" disabled selected>Selecione uma data para filtrar</option>
+                <option *ngFor="let mes of meses; index as i" value="{{i + 1}}">{{mes}} de {{ano}}</option>
+            </select>
+        </div>
+    </div>
+    
     <div class="tabela">
         <table class="table table-secondary table-striped table-hover">
             <thead>
@@ -33,15 +43,19 @@
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let cost of costs">
-                <td>{{cost.descricao}}</td>
-                <td>R$ {{cost.valor}}</td>
-                <!-- <td>
-                    <input type="text">
-                </td> -->
-                <td><i class="fas fa-edit"></i> <i (click)="apagar(cost.id)" class="fas fa-trash-alt" style="margin-left: 5%;"></i></td>
+            <tr *ngFor="let cost of costs; index as i">
+                <td *ngIf="!edit">{{cost.descricao}}</td>
+                <td *ngIf="!edit">R$ {{cost.valor}}</td>
+                <td *ngIf="edit && i==index">
+                    <input [(ngModel)]="costs[index].descricao" [ngModelOptions]="{standalone: true}" type="text">
+                </td>
+                <td *ngIf="edit && i==index">
+                    <input [(ngModel)]="costs[index].valor" [ngModelOptions]="{standalone: true}" type="number">
+                </td>
+                <td *ngIf="!edit"><i (click)="editFlag(i)" class="fas fa-edit"></i> <i (click)="apagar(cost.id)" class="fas fa-trash-alt" style="margin-left: 5%;"></i></td>
+                <td *ngIf="edit && i==index"><i (click)="editar(cost)" class="fas fa-check-circle"></i> <i (click)="editFlag(i)" class="fas fa-times-circle" style="margin-left: 5%;"></i></td>
             </tr>  
-            <tr>
+            <tr style="position: absolute; bottom: 6.5%; width: 60%;">
                 <th>Valor Total: </th>
                 <td style="font-weight: bold;">R$ {{valorTotal}}</td>
                 <td></td>
@@ -49,4 +63,5 @@
             </tbody>
         </table>
     </div>
+   
 </div>

@@ -22,6 +22,25 @@ h6 {
 .card {
     margin-left: 18%;
     margin-top: 2%;
+    box-shadow: 6px 8px 15px black;
+}
+
+.calendario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendario-label{
+    display: flex;
+    width: 60%;
+    color: black;
+    
+}
+
+select {
+    width: 25%;
+    margin-left: 1%;
 }
 
 th, td {
@@ -32,6 +51,10 @@ th {
     font-weight: bold;
 }
 
+tr {
+    height: 5%;
+}
+
 i {
     font-size: 110%;
     cursor: pointer;
@@ -40,11 +63,17 @@ i {
 .tabela {
     display: flex;
     justify-content: center;
-    margin-top: 5%;
-
+    width: 60%;
+    height: 50%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    // box-shadow: 6px 8px 15px black;
+    box-shadow: 6px 8px 15px black, -6px 0 20px black;
+    margin-left: 20%;
+    background-color: rgb(226, 227, 229);
 }
 
 .table {
     text-align: center;
-    width: 60%;
+    width: 100%;
 }
