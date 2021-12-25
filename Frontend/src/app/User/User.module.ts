@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
 import { LoginUsuarioComponent } from './login-usuario/login-usuario.component';
 import { LayoutModule } from '../shared/layout/layout.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
     declarations: [
@@ -13,7 +14,8 @@ import { LayoutModule } from '../shared/layout/layout.module';
     imports: [
         CommonModule,
         FormsModule,
-        LayoutModule
-    ],
+        LayoutModule,
+        RouterModule
+    ]
 })
 export class UserModule { }
