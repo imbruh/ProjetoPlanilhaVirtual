@@ -27,7 +27,8 @@ export class CadastroUsuarioComponent implements OnInit {
     cadastrar(){
         this.userService.cadastrar(this.user).subscribe(
             user=>{
-                console.log(user)
+                this.userService.setarLocalStorage(user.id);
+                this.roteador.navigate(['index']);
             }
         )
     }
